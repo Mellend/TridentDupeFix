@@ -31,7 +31,7 @@ public class InventoryClick implements Listener {
      * Handles the InventoryClickEvent. If the player interacts with a Trident using a hotbar swap action,
      * the player is tracked to prevent the dupe glitch.
      *
-     * @param event The InventoryClickEvent.
+     * @param e The InventoryClickEvent.
      */
     @EventHandler()
     public void onPlayerStopUsingItem(InventoryClickEvent e) {
