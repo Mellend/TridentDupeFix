@@ -5,10 +5,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 import ru.vayflare.trident.events.InventoryClick;
 import ru.vayflare.trident.events.PlayerLaunchProjectile;
 
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.HashMap;
+import java.util.Map;
 
 public final class TridentDupeFix extends JavaPlugin {
-    public static ConcurrentHashMap<HumanEntity, Integer> cancel = new ConcurrentHashMap<>();
+    public static final Map<HumanEntity, Integer> cancel = new HashMap<>();
 
     @Override
     public void onEnable() {
@@ -18,6 +19,6 @@ public final class TridentDupeFix extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        cancel.clear();
     }
 }

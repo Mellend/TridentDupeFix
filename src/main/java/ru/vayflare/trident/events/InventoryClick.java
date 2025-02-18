@@ -20,9 +20,10 @@ public class InventoryClick implements Listener {
         if (event.getCurrentItem() == null || event.getCurrentItem().getType() != Material.TRIDENT) {
             return;
         }
-        if (event.getAction() == InventoryAction.HOTBAR_SWAP) {
-            TridentDupeFix.cancel.put(event.getWhoClicked(), plugin.getServer().getCurrentTick());
-            event.setResult(Event.Result.DENY);
+        if (event.getAction() != InventoryAction.HOTBAR_SWAP) {
+            return;
         }
+        TridentDupeFix.cancel.put(event.getWhoClicked(), plugin.getServer().getCurrentTick());
+        event.setResult(Event.Result.DENY);
     }
 }

@@ -20,8 +20,9 @@ public class PlayerLaunchProjectile implements Listener {
         }
         e.getPlayer().closeInventory();
         int tick = TridentDupeFix.cancel.getOrDefault(e.getPlayer(), -1);
-        if (plugin.getServer().getCurrentTick() == tick) {
-            e.setCancelled(true);
+        if (plugin.getServer().getCurrentTick() != tick) {
+            return;
         }
+        e.setCancelled(true);
     }
 }
