@@ -1,0 +1,6 @@
+name: TridentDupeFix
+version: '1.0'
+main: ru.vayflare.trident.TridentDupeFix
+api-version: '1.21'
+authors: [ Vayflare ]
+description: Hot fix trident dupe, which appeared ~15 hours ago
