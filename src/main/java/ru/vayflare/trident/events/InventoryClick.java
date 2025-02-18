@@ -34,14 +34,14 @@ public class InventoryClick implements Listener {
      * @param event The InventoryClickEvent.
      */
     @EventHandler()
-    public void onPlayerStopUsingItem(InventoryClickEvent event) {
-        if (event.getCurrentItem() == null || event.getCurrentItem().getType() != Material.TRIDENT) {
+    public void onPlayerStopUsingItem(InventoryClickEvent e) {
+        if (e.getCurrentItem() == null || e.getCurrentItem().getType() != Material.TRIDENT) {
             return;
         }
-        if (event.getAction() != InventoryAction.HOTBAR_SWAP) {
+        if (e.getAction() != InventoryAction.HOTBAR_SWAP) {
             return;
         }
-        TridentDupeFix.cancel.put(event.getWhoClicked(), plugin.getServer().getCurrentTick());
-        event.setResult(Event.Result.DENY);
+        TridentDupeFix.cancel.put(e.getWhoClicked(), plugin.getServer().getCurrentTick());
+        e.setResult(Event.Result.DENY);
     }
 }
